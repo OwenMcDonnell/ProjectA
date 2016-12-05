@@ -2,7 +2,7 @@ version: 1.0.{build}
 before_build:
 - ps: write-host "my dot script"
 install:
-- set path = "";
+- ps: $env:Path = ""
 build:
   verbosity: minimal
 on_finish:
