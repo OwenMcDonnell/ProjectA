@@ -1,10 +1,11 @@
 version: 1.0.{build}
+image: visual studio 2017
 before_build:
-- ps: write-host "my nodot script"
-build:
-  verbosity: minimal
-on_finish:
-- cmd: echo my nodot onfin call
+- ps: write-host $HOME
+#build:
+  #verbosity: minimal
+#on_finish:
+#- cmd: echo my nodot onfin call
 
   
 #configuration: Release
