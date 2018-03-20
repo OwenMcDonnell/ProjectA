@@ -1,5 +1,6 @@
 version: 1.0.{build}
-image: visual studio 2017
+image: ubuntu
+
 before_build:
 - ps: write-host $HOME
 #build:
