@@ -1,8 +1,10 @@
 version: 1.0.{build}
 image: Visual Studio 2015
 install:
-- ps: gem install bundler
-- ps: gem install jekyll
+- ps: |
+  set PATH=C:\Ruby22\bin;%PATH%
+  gem install bundler
+  gem install jekyll
 before_build:
 - ps: write-host $HOME
 #build:
