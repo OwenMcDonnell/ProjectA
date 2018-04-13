@@ -1,6 +1,8 @@
 version: 1.0.{build}
-image: ubuntu
-
+image: Visual Studio 2015
+install:
+- ps: gem install bundler
+- ps: gem install jekyll
 before_build:
 - ps: write-host $HOME
 #build:
