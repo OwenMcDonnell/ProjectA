@@ -17,6 +17,7 @@ environment:
   my_var2: value2
 test_script:
   - ps: Write-Host "common test script"
+  - ps: write-host "${$env:configuration}, ${$env:my_var1}, ${$env:my_var2}, ${$env:my_var3}"
 for:
   -
     branches:
@@ -35,6 +36,4 @@ for:
       - echo "overriding common test script"
 
 build: off
-  
-test: off
 
