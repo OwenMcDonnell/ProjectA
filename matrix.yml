@@ -8,19 +8,36 @@ version: 1.0.{build}
 #configuration:
 #  - Debug
 #  - Release
+platform: 
+  - x86
+  - x64
+configuration: Debug
 environment:
-  matrix:
-  - APPVEYOR_BUILD_WORKER_IMAGE: WMF 5
-    PowerShellEdition: Desktop
-  - APPVEYOR_BUILD_WORKER_IMAGE: WMF 5
-    PowerShellEdition: Core
-  - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2013
-    PowerShellEdition: Desktop
+  my_var1: value1
+  my_var2: value2
+test_script:
+  - ps: Write-Host "common test script"
+for:
+  -
+    branches:
+      only:
+        - master
+    configuration: Release
+    environment:
+      my_var1: not-value1
+	  my_var3: new-value
+	
+  -
+    branches:
+      only:
+	    - /dev-.*/ #regular expressions can also be used to match several branches
+	  platform: Any CPU
+      test_script:
+        - echo "overriding common test script"
+ 
 
 
 build: off
   
 test: off
 
-install:
-- ps: $PSVersionTable | ForEach-Object {$_}
