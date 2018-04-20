@@ -23,7 +23,9 @@ for:
     branches:
       only:
         - master
-    configuration: Release
+    configuration: 
+      - Release
+      - test
     environment:
       my_var1: not-value1
       my_var3: new-value	
