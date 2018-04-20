@@ -29,7 +29,7 @@ for:
   -
     branches:
       only:
-	- /dev-.*/ #regular expressions can also be used to match several branches
+        - /dev-.*/ #regular expressions can also be used to match several branches
     platform: Any CPU
     test_script:
       - echo "overriding common test script"
