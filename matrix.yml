@@ -15,6 +15,9 @@ configuration: Debug
 environment:
   my_var1: value1
   my_var2: value2
+    matrix:
+      #- my_var1: not-value1
+      - my_var3: new-value
 test_script:
   - ps: Write-Host "common test script"
   - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
@@ -30,10 +33,10 @@ for:
     configuration: 
       - Release
       - test
-    environment:
-      matrix:
+    #environment:
+      #matrix:
         #- my_var1: not-value1
-        - my_var3: new-value	
+        #- my_var3: new-value	
   -
     branches:
       only:
