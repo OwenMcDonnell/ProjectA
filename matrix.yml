@@ -46,7 +46,8 @@ for:
         - configuration: test
           my_var2: value2
     environment:
-      my_var2: matrix-value2
+      matrix:
+        my_var2: matrix-value2
 
 build: off
 
