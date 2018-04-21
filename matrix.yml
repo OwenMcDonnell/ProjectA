@@ -46,9 +46,9 @@ for:
       only: 
         - configuration: test
           my_var2: value2
-      test_script:
-        - ps: write-host "for-matrix test script"
-        - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+    test_script:
+      - ps: write-host "for-matrix test script"
+      - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
 
 build: off
 
