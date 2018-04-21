@@ -39,13 +39,13 @@ for:
       #matrix:
         #- my_var1: not-value1
         #- my_var3: new-value	
-  -
-    branches:
-      only:
-        - /dev-.*/ #regular expressions can also be used to match several branches
-    platform: Any CPU
-    test_script:
-      - echo "overriding common test script"
+  #-
+   # branches:
+    #  only:
+     #   - /dev-.*/ #regular expressions can also be used to match several branches
+    #platform: Any CPU
+    #test_script:
+     # - echo "overriding common test script"
   -
     matrix:
       only: 
