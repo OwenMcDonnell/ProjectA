@@ -19,7 +19,7 @@ environment:
   my_var2: value2
   #my_var3: value3
   matrix:
-    - my_var1: not-value1
+    #- my_var1: not-value1
     - my_var3: new-value
 test_script:
   - ps: Write-Host "common test script"
