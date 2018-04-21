@@ -1,62 +1,38 @@
-version: 1.0.{build}
+version: commit-$(appveyor_build_version)
 
-#matrix:
-# fast_finish: true
-#platform:
-#  - x86
-#  - Any CPU
-#configuration:
-#  - Debug
-#  - Release
 platform: 
   - x86
   - x64
 configuration:
+  - Debug
   - Release
-  - test
 environment:
   my_var1: value1
   my_var2: value2
-  #my_var3: value3
   matrix:
-    #- my_var1: not-value1
-    - my_var3: new-value
+    - my_var1: overridden-value1
+    - my_var3: value3
 test_script:
   - ps: Write-Host "common test script"
-  - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
-#matrix:
- # exclude:
-  #  - configuration: Release
-   #   my_var2: value2
+build_script:
+  - echo "common build script"
 for:
-  #-
-   # branches:
-    #  only:
-     #   - master
-    #configuration: 
-     # - Release
-      #- test
-    #environment:
-      #matrix:
-        #- my_var1: not-value1
-        #- my_var3: new-value	
-  #-
-   # branches:
-    #  only:
-     #   - /dev-.*/ #regular expressions can also be used to match several branches
-    #platform: Any CPU
-    #test_script:
-     # - echo "overriding common test script"
   -
     matrix:
       only: 
-        - configuration: test
-          my_var3: new-value
-    environment:
-      my_var1: not-value1
+        - configuration: Release
+          my_var1: value1
+    platform: Any CPU
     test_script:
-      - ps: write-host "for-matrix test script"
-      - echo %configuration% %my_var1% %my_var2% %my_var3%
+      - ps: write-host "for-matrix override test script"
+      - ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
 
-build: off
 
+  -
+    matrix:
+      only: 
+        - configuration: Debug
+          my_var1: value1
+    build_script:
+      - cmd: echo "for-matrix override build script"
+      - ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
