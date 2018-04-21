@@ -43,7 +43,7 @@ for:
   -
     matrix:
       only: 
-        - configuration: Release
+        - configuration: test
           my_var2: value2
     environment:
       my_var2: matrix-value2
