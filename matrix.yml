@@ -45,7 +45,7 @@ for:
     matrix:
       only: 
         - configuration: test
-          my_var2: value2
+          my_var1: value1
     test_script:
       - ps: write-host "for-matrix test script"
       - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
