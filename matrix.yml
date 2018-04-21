@@ -56,7 +56,7 @@ for:
       my_var1: not-value1
     test_script:
       - ps: write-host "for-matrix test script"
-      - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+      - echo %configuration% %my_var1% %my_var2% %my_var3%
 
 build: off
 
