@@ -31,8 +31,9 @@ for:
       - Release
       - test
     environment:
-      my_var1: not-value1
-      my_var3: new-value	
+      matrix:
+        my_var1: not-value1
+        my_var3: new-value	
   -
     branches:
       only:
@@ -46,8 +47,7 @@ for:
         - configuration: test
           my_var2: value2
     environment:
-      matrix:
-        my_var2: matrix-value2
+      my_var2: matrix-value2
 
 build: off
 
