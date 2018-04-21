@@ -18,6 +18,10 @@ environment:
 test_script:
   - ps: Write-Host "common test script"
   - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+matrix:
+  exclude:
+    - configuration: Debug
+      my_var2: value2
 for:
   -
     branches:
