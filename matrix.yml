@@ -32,8 +32,8 @@ for:
       - test
     environment:
       matrix:
-        my_var1: not-value1
-        my_var3: new-value	
+        - my_var1: not-value1
+        - my_var3: new-value	
   -
     branches:
       only:
