@@ -41,13 +41,14 @@ for:
     platform: Any CPU
     test_script:
       - echo "overriding common test script"
-  #-
-   # matrix:
-    #  only: 
-     #   - configuration: test
-      #    my_var2: value2
-    #environment:
-     # my_var2: matrix-value2
+  -
+    matrix:
+      only: 
+        - configuration: test
+          my_var2: value2
+      test_script:
+        - ps: write-host "for-matrix test script"
+        - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
 
 build: off
 
