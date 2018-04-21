@@ -11,7 +11,9 @@ version: 1.0.{build}
 platform: 
   - x86
   - x64
-configuration: Debug
+configuration:
+  - Release
+  - test
 environment:
   my_var1: value1
   my_var2: value2
@@ -26,13 +28,13 @@ test_script:
   #  - configuration: Release
    #   my_var2: value2
 for:
-  -
-    branches:
-      only:
-        - master
-    configuration: 
-      - Release
-      - test
+  #-
+   # branches:
+    #  only:
+     #   - master
+    #configuration: 
+     # - Release
+      #- test
     #environment:
       #matrix:
         #- my_var1: not-value1
