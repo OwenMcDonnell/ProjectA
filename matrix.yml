@@ -51,7 +51,7 @@ for:
     matrix:
       only: 
         - configuration: test
-          my_var1: value1
+          my_var3: new-value
     environment:
       my_var1: not-value1
     test_script:
