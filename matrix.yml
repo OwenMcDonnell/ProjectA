@@ -40,6 +40,13 @@ for:
     platform: Any CPU
     test_script:
       - echo "overriding common test script"
+  -
+    matrix:
+      only: 
+        - configuration: Release
+          my_var2: value2
+    environment:
+      my_var2: matrix-value2
 
 build: off
 
