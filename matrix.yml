@@ -1,4 +1,4 @@
-version: commit-$($env:appveyor_build_version)
+version: commit-{branch}-{build}
 
 platform: 
   - x86
