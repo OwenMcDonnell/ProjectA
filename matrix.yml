@@ -1,4 +1,4 @@
-version: {version}-{branch}-{build}
+version: test-{branch}-{build}-{version}-{commit}
 
 platform: 
   - x86
