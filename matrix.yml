@@ -7,15 +7,15 @@ platform:
   #- Release
 environment:
   my_var1: value1
-  #my_var2: value2
+  my_var2: value2
   matrix:
     - my_var1: value1-2
     - my_var1: value1-3
 test_script:
-  - ps: Write-Host "my_var1:" $env:my_var1
-build: off
-#build_script:
- # - echo "common build script"
+  - ps: write-host "common/default test script"
+  - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2
+build_script:
+  - echo "common/default build script"
 #for:
  # -
   #  matrix:
