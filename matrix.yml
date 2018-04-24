@@ -36,3 +36,8 @@ for:
     build_script:
       - cmd: echo "for-matrix override build script"
       - ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
+  -
+    matrix:
+      exclude:
+        - configuration: Debug
+          my_var1: overridden-value1
