@@ -16,3 +16,28 @@ test_script:
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2
 build_script:
   - echo "common/default build script"
+for:
+  -
+    matrix:
+      only: 
+        - configuration: Release
+          my_var1: value1
+    platform: Any CPU
+    test_script:
+      - ps: write-host "for-matrix override test script"
+      - ps: write-host $env:platform $env:my_var1 $env:my_var2
+
+  -
+    matrix:
+      only:
+        - configuration: Debug
+          my_var1: value1
+    build_script:
+      - cmd: echo "for-matrix override build script"
+      - ps: write-host $env:platform $env:my_var1 $env:my_var2
+
+  -
+    matrix:
+      exclude:
+        - configuration: Debug
+          my_var1: overridden-value1
