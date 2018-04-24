@@ -1,43 +1,43 @@
-version: test-{branch}-{build}-{version}-{commit}
-
-platform: 
-  - x86
-  - x64
-configuration:
-  - Debug
-  - Release
+version: 1.0.{build}
+#platform: 
+ # - x86
+  #- x64
+#configuration:
+ # - Debug
+  #- Release
 environment:
   my_var1: value1
-  my_var2: value2
+  #my_var2: value2
   matrix:
-    - my_var1: overridden-value1
-    - my_var3: value3
-test_script:
-  - ps: Write-Host "common test script"
-build_script:
-  - echo "common build script"
-for:
-  -
-    matrix:
-      only: 
-        - configuration: Release
-          my_var1: value1
-    platform: Any CPU
-    test_script:
-      - ps: write-host "for-matrix override test script"
-      - ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
+    - my_var1: value1-2
+    - my_var1: value1-3
+install:
+  - ps: Write-Host "my_var1: $env:my_var1"
+build: off
+#build_script:
+ # - echo "common build script"
+#for:
+ # -
+  #  matrix:
+   #   only: 
+    #    - configuration: Release
+     #     my_var1: value1
+    #platform: Any CPU
+    #test_script:
+     # - ps: write-host "for-matrix override test script"
+      #- ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
 
 
-  -
-    matrix:
-      only: 
-        - configuration: Debug
-          my_var1: value1
-    build_script:
-      - cmd: echo "for-matrix override build script"
-      - ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
-  -
-    matrix:
-      exclude:
-        - configuration: Debug
-          my_var1: overridden-value1
+  #-
+   # matrix:
+    #  only: 
+     #   - configuration: Debug
+      #    my_var1: value1
+    #build_script:
+     # - cmd: echo "for-matrix override build script"
+      #- ps: write-host $env:platform $env:my_var1 $env:my_var2 $env:my_var3
+ # -
+  #  matrix:
+   #   exclude:
+    #    - configuration: Debug
+     #     my_var1: overridden-value1
