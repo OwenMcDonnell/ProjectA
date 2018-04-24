@@ -12,7 +12,7 @@ environment:
     - my_var1: value1-2
     - my_var1: value1-3
 install:
-  - ps: Write-Host "my_var1: $env:my_var1"
+  - ps: Write-Host "my_var1:" $env:my_var1
 build: off
 #build_script:
  # - echo "common build script"
