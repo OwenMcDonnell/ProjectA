@@ -8,7 +8,7 @@ configuration:
 environment:
   my_var1: value1
   my_var2: value2
- # matrix:
+  matrix:
     - my_var3: value3
     - my_var4: value4
 test_script:
