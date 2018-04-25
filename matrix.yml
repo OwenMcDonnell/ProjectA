@@ -9,8 +9,8 @@ environment:
   my_var1: value1
   my_var2: value2
  # matrix:
-    #- my_var1: overridden-value1
-    #- my_var2: overridden-value2
+    - my_var3: value3
+    - my_var4: value4
 test_script:
   - ps: write-host "common/default test script"
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2
@@ -21,11 +21,9 @@ for:
     matrix:
       only: 
         - configuration: Release
-          my_var1: value1
+          my_var3: value3
     environment:
-      matrix:
-        - my_var1: overridden-value1
-        - my_var2: overridden-value2
+      my_var3: overridden-value3
     platform: Any CPU
     test_script:
       - ps: write-host "for-matrix override test script"
@@ -35,7 +33,9 @@ for:
     matrix:
       only:
         - configuration: Debug
-          my_var1: value1
+          my_var4: value4
+    environment:
+      my_var4: overridden-value4
     build_script:
       - cmd: echo "for-matrix override build script"
       - ps: write-host $env:platform $env:my_var1 $env:my_var2
@@ -44,4 +44,4 @@ for:
     matrix:
       exclude:
         - configuration: Debug
-          my_var1: overridden-value1
+          my_var4: overridden-value4
