@@ -13,7 +13,7 @@ environment:
     - my_var4: value4
 test_script:
   - ps: write-host "common/default test script"
-  - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2
+  - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 build_script:
   - echo "common/default build script"
 for:
@@ -27,7 +27,7 @@ for:
     platform: Any CPU
     test_script:
       - ps: write-host "for-matrix override test script"
-      - ps: write-host $env:platform $env:my_var1 $env:my_var2
+      - ps: "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
   -
     matrix:
@@ -38,7 +38,7 @@ for:
       my_var4: overridden-value4
     build_script:
       - cmd: echo "for-matrix override build script"
-      - ps: write-host $env:platform $env:my_var1 $env:my_var2
+      - ps: "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
   -
     matrix:
