@@ -22,7 +22,8 @@ for:
       only: 
         - configuration: Release
           my_var1: value1
-    my_var1: overridden-value1
+    environment:
+      my_var1: overridden-value1
     platform: Any CPU
     test_script:
       - ps: write-host "for-matrix override test script"
