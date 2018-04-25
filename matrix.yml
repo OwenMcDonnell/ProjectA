@@ -8,9 +8,9 @@ configuration:
 environment:
   my_var1: value1
   my_var2: value2
-  matrix:
-    - my_var1: overridden-value1
-    - my_var2: overridden-value2
+ # matrix:
+    #- my_var1: overridden-value1
+    #- my_var2: overridden-value2
 test_script:
   - ps: write-host "common/default test script"
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2
@@ -22,6 +22,7 @@ for:
       only: 
         - configuration: Release
           my_var1: value1
+    my_var1: overridden-value1
     platform: Any CPU
     test_script:
       - ps: write-host "for-matrix override test script"
