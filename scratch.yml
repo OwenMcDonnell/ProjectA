@@ -1,6 +1,6 @@
 version: 0.0.{build}
 
-skip_non_tags: true
+#skip_non_tags: true
 platform: x64
 
 before_build:
