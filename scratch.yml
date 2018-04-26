@@ -1,0 +1,25 @@
+version: 0.0.{build}
+skip_non_tags: true
+platform: x64
+
+before_build:
+  - cmd: |
+      git clone https://github.com/mintty/mintty 
+      git clone https://github.com/rprichard/wslbridge 
+  - sh: |
+      sudo apt-get update -qq 
+      sudo apt-get install gcc g++ make -qq 
+build_script:
+  - sh: |
+      cd wslbridge/backend 
+      make 
+      ls ../out 
+  - cmd: |
+      cd mintty 
+      set PATH=C:\cygwin64\bin;%PATH% 
+      C:\cygwin64\bin\make.exe > NULL 
+      dir bin 
+      cd ..
+      cd wslbridge\frontend 
+      C:\cygwin64\bin\make.exe > NULL 
+      dir ..\out 
