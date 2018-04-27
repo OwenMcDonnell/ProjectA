@@ -5,7 +5,7 @@ image:
 build: off
 
 environment:
-  my_secret: P@SS^*$
+  my_secret: PASS^*$
   #my_secret:
    # secure: u3dtUwHWrXzkNXOfuN6B+A==
 
