@@ -12,7 +12,7 @@ environment:
 install:
   - ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
   #- cmd: appveyor-tools\secure-file -encrypt scratch.yml -secret %my_secret%
-  - cmd: appveyor-tools\secure-file -decrypt test.enc -out %USERPROFILE%\secure -secret %my_secret%
+  - cmd: appveyor-tools\secure-file -decrypt test.enc -out %USERPROFILE%\secure -secret "P&SS^*$"
   #- sh: ./appveyor-tools/secure-file -encrypt scratch.yml -secret $my_secret
-  - sh: ./appveyor-tools/secure-file -decrypt test.enc -out $HOME/secure -secret $my_secret
+  - sh: ./appveyor-tools/secure-file -decrypt test.enc -out $HOME/secure -secret "P&SS^*$"
 
