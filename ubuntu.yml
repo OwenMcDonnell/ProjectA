@@ -5,7 +5,7 @@ image:
 build: off
 
 environment:
-  my_secret: AAAA()$
+  my_secret: ABCDE$^&
   #my_secret:
     #secure: ZDpK53GHe7NA+QlfvRT6pg==
 
