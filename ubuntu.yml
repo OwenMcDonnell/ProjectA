@@ -5,9 +5,9 @@ image:
 build: off
 
 environment:
-  #my_secret: 1234$
-  my_secret:
-    secure: ZDpK53GHe7NA+QlfvRT6pg==
+  my_secret: AAAA()$
+  #my_secret:
+    #secure: ZDpK53GHe7NA+QlfvRT6pg==
 
 install:
   - ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
