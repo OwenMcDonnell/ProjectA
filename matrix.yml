@@ -15,6 +15,7 @@ install:
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
   - ps: write-host "common/default test script"
+  - ps: write-host 'platform' $env:PLATFORM
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 build_script:
   - echo "common/default build script"
