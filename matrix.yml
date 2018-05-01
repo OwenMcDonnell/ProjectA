@@ -28,6 +28,7 @@ for:
      # my_var4: overridden-value4
     install: 
       - ps: write-host "install script"
+      - ps: write-Host $env:PLATFORM
     build_script:
       - cmd: echo "for-matrix override build script"
       - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
