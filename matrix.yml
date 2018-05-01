@@ -26,6 +26,7 @@ for:
        #   my_var4: value4
     #environment:
      # my_var4: overridden-value4
+    platform: x86
     install: 
       - ps: write-host "install script"
       - ps: write-Host $env:PLATFORM
