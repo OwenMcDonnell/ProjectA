@@ -26,7 +26,7 @@ for:
        #   my_var3: value3
     #environment:
      # my_var3: overridden-value3
-    platform: Any CPU
+    platform: x86
     test_script:
       - ps: write-host "for-matrix override test script"
       - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
