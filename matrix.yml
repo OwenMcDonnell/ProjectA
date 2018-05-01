@@ -1,7 +1,7 @@
 version: 1.0.{build}
-#platform: 
+platform: 
  # - x86
-  #- x64
+  - x64
 #configuration:
  # - Debug
   #- Release
@@ -20,19 +20,7 @@ build_script:
   - echo "common/default build script"
 for:
   -
-    #matrix:
-     # only: 
-      #  - configuration: Release
-       #   my_var3: value3
-    #environment:
-     # my_var3: overridden-value3
-    platform: x86
-    test_script:
-      - ps: write-host "for-matrix override test script"
-      - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
-
-  -
-    #matrix:
+     #matrix:
      # only:
       #  - configuration: Debug
        #   my_var4: value4
@@ -44,6 +32,19 @@ for:
       - cmd: echo "for-matrix override build script"
       - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
+  -
+    #matrix:
+     # only: 
+      #  - configuration: Release
+       #   my_var3: value3
+    #environment:
+     # my_var3: overridden-value3
+    platform: x86
+    test_script:
+      - ps: write-host "for-matrix override test script"
+      - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
+
+   
   #-
    # matrix:
     #  exclude:
