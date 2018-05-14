@@ -12,8 +12,8 @@ environment:
    # - my_var3: value3
     #- my_var4: value4
 init:
-  - tree C:\OpenSSL-Win32
-  - tree C:\OpenSSL-Win64
+  - dir /s C:\OpenSSL-Win32
+  - dir /s C:\OpenSSL-Win64
 install:
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
