@@ -25,11 +25,11 @@ test_script:
 build_script:
   - echo "common/default build script"
 for:
-  -
-     matrix:
-      exclude:
-        - platform: x86
-          my_var4: value4
+  #-
+   #  matrix:
+    #  exclude:
+     #   - platform: x86
+      #    my_var4: value4
     #environment:
      # my_var4: overridden-value4
     #platform: x86
