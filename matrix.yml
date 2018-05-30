@@ -13,7 +13,8 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 init:
-  - echo test-text > ./archive/test-file.txt
+  - mkdir archive
+  - echo test-text > archive/test-file.txt
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
