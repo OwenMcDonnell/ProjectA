@@ -17,6 +17,7 @@ init:
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
+  - sleep 60
   - mkdir archive
   - echo test-text > archive/test-file.txt
   - ps: write-host 'platform' $env:PLATFORM
