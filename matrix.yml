@@ -1,19 +1,19 @@
 version: 1.0.{build}
 platform: 
   - x86
-  - x64
+  #- x64
 #configuration:
  # - Debug
   #- Release
 environment:
-  #my_var1: value1
-  #my_var2: value2
-  matrix:
-    - my_var3: value3
-    - my_var4: value4
-    - dummy: blank
+  my_var1: value1
+  my_var2: value2
+  #matrix:
+   # - my_var3: value3
+    #- my_var4: value4
+    #- dummy: blank
 init:
-  #- set
+  - echo test-text > archive/test-file.txt
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
@@ -23,12 +23,17 @@ test_script:
   - ps: write-host 'platform' $env:PLATFORM
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 build_script:
+  - 7z a -C:\archive.zip archive/
   - echo "common/default build script"
+deploy:
+  - provider: Environment
+    name: ProjectA
+    #site_name: $(site_to_deploy)
 matrix:
    exclude:
      - platform: x86
        my_var4: value4
-for:
+#for:
   #-
    #  matrix:
     #  exclude:
@@ -44,17 +49,17 @@ for:
      # - cmd: echo "for-matrix override build script"
       #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
-  -
-    matrix:
-      only: 
-        - platform: x86
-          my_var3: value3
-    environment:
-      my_var3: overridden-value3
-    platform: x86
-    test_script:
-      - ps: write-host "for-matrix override test script"
-      - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
+ # -
+  #  matrix:
+   #   only: 
+    #    - platform: x86
+     #     my_var3: value3
+ #   environment:
+  #    my_var3: overridden-value3
+   # platform: x86
+    #test_script:
+     # - ps: write-host "for-matrix override test script"
+      #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
    
   #-
