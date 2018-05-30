@@ -13,11 +13,12 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 init:
-  - mkdir archive
-  - echo test-text > archive/test-file.txt
+
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
+  - mkdir archive
+  - echo test-text > archive/test-file.txt
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
   - ps: write-host "common/default test script"
