@@ -17,9 +17,9 @@ init:
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
-  - sleep 60
   - mkdir archive
   - echo test-text > archive/test-file.txt
+  - echo write-host "sleeping"; sleep 60 > archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
   - ps: write-host "common/default test script"
