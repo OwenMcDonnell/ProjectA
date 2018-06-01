@@ -20,7 +20,7 @@ install:
   - mkdir archive
   - echo test-text > archive/test-file.txt
   - echo write-host "sleeping" > archive/before-deploy.ps1
-  - echo sleep 60 >> archive/before-deploy.ps1
+  - echo \n sleep 60; >> archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
   - ps: write-host "common/default test script"
