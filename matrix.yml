@@ -40,6 +40,14 @@ matrix:
    exclude:
      - platform: x86
        my_var4: value4
+deploy:
+  provider: GitHub
+  auth_token: 7f3896e5f90677dae58ec8bfab967df6b7016882
+  draft: false
+  prerelease: false
+  tag: v$(APPVEYOR_BUILD_VERSION)
+  release: unp4k Tools for Star Citizen
+  description: 
 #for:
   #-
    #  matrix:
