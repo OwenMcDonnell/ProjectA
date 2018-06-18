@@ -32,9 +32,9 @@ build_script:
 artifacts:
   - path: archive.zip
     name: archive
-deploy:
-  - provider: Environment
-    name: ProjectA
+#deploy:
+ # - provider: Environment
+  #  name: ProjectA
     #site_name: $(site_to_deploy)
 matrix:
    exclude:
