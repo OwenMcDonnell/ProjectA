@@ -8,12 +8,15 @@ platform:
 environment:
   my_var1: value1
   my_var2: value2
+  my_var3:
+    secure: tS/fJlZgz7PJXq3wu0B6Uj1QHCLlh8ZL85Ieun/10so=
+
   #matrix:
    # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
 init:
-
+  - ps: write-host $env:my_var3
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
