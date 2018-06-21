@@ -8,11 +8,11 @@ environment:
     - var1: test3
     - var1: test4
     - var1: test5
-init:
+install:
   
-  - ps: Start-Sleep -s 10
+  - ps: Start-Sleep -s 5
   - ps: Restart-Computer
-  - ps: Start-Sleep -s 10
+  - ps: Start-Sleep -s 5
 build:
   verbosity: minimal
 
