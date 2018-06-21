@@ -1,26 +1,18 @@
 version: 0.0.{build}
-
+image: Visual studio 2017
 #skip_non_tags: true
-platform: x64
+environment:
+  matrix:
+    - var1: test1
+    - var1: test2
+    - var1: test3
+    - var1: test4
+    - var1: test5
+init:
+  
+  - ps: Start-Sleep -s 5
+  - ps: Restart-Computer
+  - ps: Start-Sleep -s 5
+build:
+  verbosity: minimal
 
-before_build:
-  - cmd: |
-      git clone https://github.com/mintty/mintty 
-      git clone https://github.com/rprichard/wslbridge 
-  - sh: |
-      sudo apt-get update -qq 
-      sudo apt-get install gcc g++ make -qq 
-build_script:
-  - sh: |
-      cd wslbridge/backend 
-      make 
-      ls ../out 
-  - cmd: |
-      cd mintty 
-      set PATH=C:\cygwin64\bin;%PATH% 
-      C:\cygwin64\bin\make.exe > NULL 
-      dir bin 
-      cd ..
-      cd wslbridge\frontend 
-      C:\cygwin64\bin\make.exe > NULL 
-      dir ..\out 
