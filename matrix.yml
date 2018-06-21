@@ -8,15 +8,12 @@ platform:
 environment:
   my_var1: value1
   my_var2: value2
-  my_var3:
-    secure: tS/fJlZgz7PJXq3wu0B6Uj1QHCLlh8ZL85Ieun/10so=
 
   #matrix:
    # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
 init:
-  - ps: write-host $env:my_var3
   #- dir /s C:\cygwin
   #- dir /s C:\cygwin64
 install:
@@ -35,22 +32,14 @@ build_script:
 artifacts:
   - path: archive.zip
     name: archive
-#deploy:
- # - provider: Environment
-  #  name: ProjectA
-    #site_name: $(site_to_deploy)
+deploy:
+  - provider: Environment
+    name: ProjectA
+    site_name: $(site_to_deploy)
 matrix:
    exclude:
      - platform: x86
        my_var4: value4
-deploy:
-  provider: GitHub
-  auth_token: 7f3896e5f90677dae58ec8bfab967df6b7016882
-  draft: false
-  prerelease: false
-  tag: v$(APPVEYOR_BUILD_VERSION)
-  release: unp4k Tools for Star Citizen
-  description: 
 #for:
   #-
    #  matrix:
