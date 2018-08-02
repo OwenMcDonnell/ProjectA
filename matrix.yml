@@ -42,9 +42,10 @@ matrix:
        my_var4: value4
 for:
   -
-     matrix:  
-      - platform: x86
-        my_var4: value4
+     matrix:
+       only:
+         - platform: x86
+           my_var4: value4
     environment:
       my_var4: overridden-value4
     #platform: x86
