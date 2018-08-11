@@ -1,0 +1,49 @@
+version: 1.0.{build}
+
+
+install:
+  - echo %configuration%
+
+test: off
+
+for:
+# configuration for "master" branch
+# build in Release mode and deploy to the Azure prod environment
+-
+  branches:
+    only:
+      - master
+  configuration: Release
+
+  deploy:
+    provider: WebDeploy
+    server: https://test-site-prod.scm.azurewebsites.net:443/msdeploy.axd?site=test-site-prod
+    website: test-site-prod
+    username: $test-site-prod
+    password: 123
+    ntlm: false
+    remove_files: true
+    app_offline: false
+
+# configuration for "staging" branch
+# build in Staging mode and deploy to the Azure staging environment
+-
+  branches:
+    only:
+      - staging
+  configuration: Staging
+
+  deploy:
+    provider: WebDeploy
+    server: https://test-site-staging.scm.azurewebsites.net:443/msdeploy.axd?site=test-site-staging
+    website: test-site-staging
+    username: $test-site-staging
+    password: 123
+    ntlm: false
+    remove_files: true
+    app_offline: false
+
+# "fall back" configuration for all other branches
+# no "branches" section defined
+# do not deploy at all
+configuration: Debug
