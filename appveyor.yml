@@ -3,7 +3,7 @@ before_build:
 - ps: write-host "my dot script"
 install:
 #- ps: $env:Path = ""
- - ps: |
+  - ps: |
       [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Solidity", "Machine")
   - ps: Start-Sleep -s 10
   - ps: Restart-Computer
