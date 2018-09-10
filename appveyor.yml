@@ -2,7 +2,12 @@ version: 1.0.{build}
 before_build:
 - ps: write-host "my dot script"
 install:
-- ps: $env:Path = ""
+#- ps: $env:Path = ""
+ - ps: |
+      [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Solidity", "Machine")
+  - ps: Start-Sleep -s 10
+  - ps: Restart-Computer
+  - ps: Start-Sleep -s 10
 build:
   verbosity: minimal
 on_finish:
