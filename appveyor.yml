@@ -13,12 +13,11 @@ install:
   #- ps: Start-Sleep -s 10
   #- ps: Restart-Computer
   #- ps: Start-Sleep -s 10
-  - cmd: >-
-      IF "%APPVEYOR_REPO_TAG%" == "true"
-
-      ( 
-      echo "INSIDE REPO TAG GUARD"
-      )
+  - >
+    IF "%APPVEYOR_REPO_TAG%" == "true"
+    ( 
+    echo "INSIDE REPO TAG GUARD"
+    )
 
   - set SECURE_VALUE=%test_value%
   - echo %SECURE_VALUE%
