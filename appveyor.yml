@@ -14,7 +14,7 @@ install:
   #- ps: Restart-Computer
   #- ps: Start-Sleep -s 10
   - set SECURE_VALUE=%test_value%
-  - echo SECURE_VALUE
+  - echo %SECURE_VALUE%
   - set NEW_APPVEYOR_TOKEN=%appveyor_token%
   - ps: | 
     
