@@ -13,11 +13,12 @@ install:
   #- ps: Start-Sleep -s 10
   - ps: | 
     
-    $headers = @{
-      "Authorization" = "Bearer $env:appveyor_token"
-      "Content-type" = "application/json"
-    }
-    Invoke-RestMethod -Uri 'https://ci.appveyor.com/api/projects/britzkopf/webapptestdeployment/settings' -Headers $headers -Method GET
+      $headers = @{
+        "Authorization" = "Bearer $env:appveyor_token"
+        "Content-type" = "application/json"
+      }
+      
+      Invoke-RestMethod -Uri 'https://ci.appveyor.com/api/projects/britzkopf/webapptestdeployment/settings' -Headers $headers -Method GET
 build:
   verbosity: minimal
 on_finish:
