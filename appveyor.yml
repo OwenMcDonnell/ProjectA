@@ -1,13 +1,23 @@
 version: 1.0.{build}
 before_build:
 - ps: write-host "my dot script"
+environment:
+  appveyor_token:
+    secure: f7KhsLtvVpjkt+Qdcti/HlBSidEbnuu9+cl+FxtSOPg=
 install:
 #- ps: $env:Path = ""
-  - ps: |
+  #- ps: |
       [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Solidity", "Machine")
-  - ps: Start-Sleep -s 10
-  - ps: Restart-Computer
-  - ps: Start-Sleep -s 10
+  #- ps: Start-Sleep -s 10
+  #- ps: Restart-Computer
+  #- ps: Start-Sleep -s 10
+  - ps: | 
+    
+    $headers = @{
+      "Authorization" = "Bearer $env:appveyor_token"
+      "Content-type" = "application/json"
+    }
+    Invoke-RestMethod -Uri 'https://ci.appveyor.com/api/projects/britzkopf/webapptestdeployment/settings' -Headers $headers -Method GET
 build:
   verbosity: minimal
 on_finish:
