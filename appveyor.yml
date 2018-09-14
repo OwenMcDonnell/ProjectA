@@ -7,7 +7,7 @@ environment:
 install:
 #- ps: $env:Path = ""
   #- ps: |
-      [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Solidity", "Machine")
+   #   [Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";C:\Solidity", "Machine")
   #- ps: Start-Sleep -s 10
   #- ps: Restart-Computer
   #- ps: Start-Sleep -s 10
