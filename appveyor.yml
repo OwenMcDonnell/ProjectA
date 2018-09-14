@@ -11,10 +11,11 @@ install:
   #- ps: Start-Sleep -s 10
   #- ps: Restart-Computer
   #- ps: Start-Sleep -s 10
+  - set NEW_APPVEYOR_TOKEN=%appveyor_token%
   - ps: | 
     
       $headers = @{
-        "Authorization" = "Bearer $env:appveyor_token"
+        "Authorization" = "Bearer $env:NEW_APPVEYOR_TOKEN"
         "Content-type" = "application/json"
       }
       
