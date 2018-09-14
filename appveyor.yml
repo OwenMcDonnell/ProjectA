@@ -4,6 +4,8 @@ before_build:
 environment:
   appveyor_token:
     secure: f7KhsLtvVpjkt+Qdcti/HlBSidEbnuu9+cl+FxtSOPg=
+  test_value
+    secure: 22BkPykr5pS67rWgw7eFqw==
 install:
 #- ps: $env:Path = ""
   #- ps: |
@@ -11,6 +13,8 @@ install:
   #- ps: Start-Sleep -s 10
   #- ps: Restart-Computer
   #- ps: Start-Sleep -s 10
+  - set SECURE_VALUE=%test_value%
+  - echo SECURE_VALUE
   - set NEW_APPVEYOR_TOKEN=%appveyor_token%
   - ps: | 
     
