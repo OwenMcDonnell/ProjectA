@@ -4,7 +4,7 @@ before_build:
 environment:
   appveyor_token:
     secure: f7KhsLtvVpjkt+Qdcti/HlBSidEbnuu9+cl+FxtSOPg=
-  test_value
+  test_value:
     secure: 22BkPykr5pS67rWgw7eFqw==
 install:
 #- ps: $env:Path = ""
