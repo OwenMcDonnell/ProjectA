@@ -4,16 +4,12 @@ platform:
   - x86
   #- x64
 configuration:
-
   - Release
 environment:
   my_var1: value1
   my_var2: value2
-
   matrix:
     - my_var3: value3
-
-
 
 install:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
