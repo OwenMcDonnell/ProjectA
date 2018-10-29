@@ -27,9 +27,9 @@ test_script:
 build: off
 for:
   -
-     matrix:
+     branches:
        only:
-         - taggedtrig: $env:APPVEYOR_REPO_TAG_NAME
+         - /^\d*\.\d*\.\d*$/
      environment:
        my_var4: overridden-value4
 
