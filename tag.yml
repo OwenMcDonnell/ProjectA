@@ -24,7 +24,7 @@ for:
   -
      matrix:
        only:
-         - appveyor_repo_tag: true
+         - my_var3: value3
      environment:
        my_var4: overridden-value4
 
