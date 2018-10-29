@@ -29,7 +29,7 @@ for:
   -
      matrix:
        only:
-         - tagged: $env:APPVEYOR_REPO_TAG_NAME
+         - taggedtrig: $env:APPVEYOR_REPO_TAG_NAME
      environment:
        my_var4: overridden-value4
 
