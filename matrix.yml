@@ -11,7 +11,7 @@ environment:
 
   matrix:
     #- my_var3: value3
-    - my_var4: value4
+    #- my_var4: value4
     #- dummy: blank
 #init: 
  # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
