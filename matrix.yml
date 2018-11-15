@@ -8,6 +8,7 @@ configuration:
 environment:
   my_var1: value1
   my_var2: value2
+  artifact-name: archive
 
   #matrix:
     #- my_var3: value3
