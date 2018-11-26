@@ -54,8 +54,8 @@ for:
        - ps: write-Host $env:PLATFORM
      services:
        - mssql2016
-    #build_script:
-     # - cmd: echo "for-matrix override build script"
+    build_script:
+      - cmd: echo "for-matrix override build script"
       #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
      on_success:
        - ps: write-host "on success script"
@@ -65,10 +65,10 @@ for:
        only: 
          - configuration: debug
            #my_var3: value3
-     environment:
-       my_var3: overridden-value3
+     #environment:
+      # my_var3: overridden-value3
    # platform: x86
-    #test_script:
-     # - ps: write-host "for-matrix override test script"
-      #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
+    test_script:
+      - ps: write-host "for-matrix override test script"
+      - ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 
