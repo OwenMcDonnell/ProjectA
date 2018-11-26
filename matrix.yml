@@ -63,7 +63,7 @@ for:
   -
      matrix:
        only: 
-         - platform: x86
+         - configurationL debug
            my_var3: value3
      environment:
        my_var3: overridden-value3
