@@ -1,4 +1,5 @@
 version: 1.0.{build}
+image: ubuntu
 platform: 
   - x86
   #- x64
@@ -9,29 +10,29 @@ environment:
   my_var1: value1
   my_var2: value2
   #artifact-name: archive
-  matrix:
-    - my_var3: value3
+  #matrix:
+   # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
 #init: 
  # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - mkdir archive
-  - echo %APPVEYOR_BUILD_NUMBER% > archive/test-file.txt
-  - echo echo sleeping; > archive/before-deploy.ps1
-  - echo sleep 60; >> archive/before-deploy.ps1
+  #- mkdir archive
+  #- echo %APPVEYOR_BUILD_NUMBER% > archive/test-file.txt
+  #- echo echo sleeping; > archive/before-deploy.ps1
+  #- echo sleep 60; >> archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
 test_script:
   - ps: write-host "common/default test script"
   - ps: write-host 'platform' $env:PLATFORM
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
-build_script:
-  - 7z a archive.zip %APPVEYOR_BUILD_FOLDER%/archive/*
-  - echo "common/default build script"
-artifacts:
-  - path: archive.zip
-    name: archive
+#build_script:
+ # - 7z a archive.zip %APPVEYOR_BUILD_FOLDER%/archive/*
+  #- echo "common/default build script"
+#artifacts:
+ # - path: archive.zip
+  #  name: archive
 #deploy:
  # - provider: Environment
   #  name: ProjectA
@@ -46,16 +47,16 @@ for:
        only:
          - configuration: release
            #my_var3: value3
-     environment:
-       my_var4: overridden-value4
+     #environment:
+      # my_var4: overridden-value4
     #platform: x86
      install: 
        - ps: write-host "install script"
        - ps: write-Host $env:PLATFORM
      services:
-       - mssql2016
-     build_script:
-       - cmd: echo "for-matrix override build script"
+       - docker
+     #build_script:
+      # - cmd: echo "for-matrix override build script"
       #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
      on_success:
        - ps: write-host "on success script"
