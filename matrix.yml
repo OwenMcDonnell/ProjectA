@@ -63,7 +63,7 @@ for:
   -
      matrix:
        only: 
-         - configurationL debug
+         - configuration: debug
            my_var3: value3
      environment:
        my_var3: overridden-value3
