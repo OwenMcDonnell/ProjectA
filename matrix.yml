@@ -1,11 +1,11 @@
 version: 1.0.{build}
-image: ubuntu
+image: 
+  #- Visual Studio 2015
+  - Visual Studio 2017
 platform: 
   - x86
-  #- x64
-configuration:
-  - Debug
-  - Release
+  - x64
+
 environment:
   my_var1: value1
   my_var2: value2
@@ -18,8 +18,8 @@ environment:
  # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  #- mkdir archive
-  #- echo %APPVEYOR_BUILD_NUMBER% > archive/test-file.txt
+  - mkdir archive
+  - echo %APPVEYOR_BUILD_NUMBER% > archive/test-file.txt
   #- echo echo sleeping; > archive/before-deploy.ps1
   #- echo sleep 60; >> archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
@@ -27,12 +27,12 @@ test_script:
   - ps: write-host "common/default test script"
   - ps: write-host 'platform' $env:PLATFORM
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
-#build_script:
- # - 7z a archive.zip %APPVEYOR_BUILD_FOLDER%/archive/*
-  #- echo "common/default build script"
-#artifacts:
- # - path: archive.zip
-  #  name: archive
+build_script:
+  - 7z a archive.zip %APPVEYOR_BUILD_FOLDER%/archive/*
+  - echo "common/default build script"
+artifacts:
+  - path: archive.zip
+    name: archive
 #deploy:
  # - provider: Environment
   #  name: ProjectA
@@ -53,8 +53,8 @@ for:
      install: 
        - ps: write-host "install script"
        - ps: write-Host $env:PLATFORM
-     services:
-       - docker
+     #services:
+      # - docker
      #build_script:
       # - cmd: echo "for-matrix override build script"
       #- ps: write-host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
