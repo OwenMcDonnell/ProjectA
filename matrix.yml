@@ -5,7 +5,6 @@ image:
 platform: 
   - x86
   - x64
-
 environment:
   my_var1: value1
   my_var2: value2
