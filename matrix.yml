@@ -14,7 +14,8 @@ environment:
    # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
-#init: 
+init: 
+  - ps: gci env:
  # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
