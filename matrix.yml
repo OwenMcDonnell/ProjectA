@@ -15,7 +15,7 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 init: 
-  - cmd: for /f "delims=" %%A in (test) do echo %%A
+  - cmd: for /f "delims=" %%A in (lines.txt) do echo %%A
   #- set
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
