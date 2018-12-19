@@ -18,7 +18,7 @@ init:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - cmd: for /f "delims=" %%A in (./lines.txt) do echo %%A
+  - cmd: for /f "delims=" %A in (./lines.txt) do echo %A
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - mkdir archive
   - echo %APPVEYOR_BUILD_NUMBER% > archive/test-file.txt
