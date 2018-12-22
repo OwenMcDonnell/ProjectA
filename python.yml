@@ -2,9 +2,7 @@ version: '1.0.{build}'
 
 environment:
 
-
   matrix:
-
     # Windows w/32 bit Geo & python 2.7
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       PYTHON: "C:\\Python27"
