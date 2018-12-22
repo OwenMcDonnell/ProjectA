@@ -18,7 +18,7 @@ for:
 -
   matrix:
     only:
-      - PYTHON: 3.4
+      - PYTHON: python 3.4
         APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
   stack: python 3.4
 -
