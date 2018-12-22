@@ -10,23 +10,13 @@ environment:
 
     # Ubuntu - python 2.7
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON_VERSION: 2.7
 
     # Ubuntu - python 3
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-      PYTHON: python 3.4
-for:
--
-  matrix:
-    only:
-      - PYTHON: python 3.4
-        APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-  stack: python 3.4
--
-  matrix:
-    only:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-  stack: python 2.7
+      PYTHON_VERSION: 3.4
 
+stack: python %PYTHON_VERSION%
 build_script:
   - echo "build script"
 #install:
