@@ -1,0 +1,39 @@
+version: '1.0.{build}'
+
+environment:
+
+
+  matrix:
+
+    # Windows w/32 bit Geo & python 2.7
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      PYTHON: "C:\\Python27"
+      PYTHON_ARCH: "32"
+
+    # Ubuntu - python 2.7
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+
+    # Ubuntu - python 3
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON: python 3.4
+for:
+-
+  matrix:
+    only:
+      - PYTHON: 3.4
+        APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+  stack: python 3.4
+-
+  matrix:
+    only:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+  stack: python 2.7
+
+build_script:
+  - echo "build script"
+#install:
+
+ # - pip install --user -e .[dev] # user flag to prevent permission errors
+
+test_script:
+  - python --version
