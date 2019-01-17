@@ -9,6 +9,8 @@ platform:
 environment:
   my_var1: value1
   my_var2: value2
+  decrypt_key:
+    secure: P6iITYoWcnW0yreLikw5vA==
   #artifact-name: archive
   #matrix:
    # - my_var3: value3
@@ -16,8 +18,8 @@ environment:
     #- dummy: blank
 init: 
   #- ps: get-netnat | remove-netnat
-  #- set
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - set
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- cmd: for /f "delims=" %A in (./lines.txt) do echo %A
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
