@@ -1,1 +1,1 @@
-Write-Host -foregroundcolor green "My successful  message"
+Write-Host "My successful  message"
