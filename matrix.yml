@@ -10,7 +10,7 @@ platform:
   #- x64
 environment:
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
-  TEMP: "C:\\test"
+  TMP: "C:\\test"
   my_var1: value1
   my_var2: value2
   decrypt_key:
