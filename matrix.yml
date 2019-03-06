@@ -8,10 +8,9 @@ image:
 platform: 
   - x86
   #- x64
-clone_folder: "c:\\pact"
 environment:
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
-  TMP: test
+  TMP: "C:\\temp"
   my_var1: value1
   my_var2: value2
   decrypt_key:
@@ -21,17 +20,15 @@ environment:
    # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
-cache: 
-  - "c:\\sr"
+
 init: 
   #- ps: get-netnat | remove-netnat
-
-  #- set
+  - set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: .\testcolor.ps1
   #- ps: write-host $erroractionpreference
-  - echo %decrypt_key%
+  #- echo %decrypt_key%
   #- ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
   #- cmd: appveyor-tools\secure-file -decrypt test.txt.enc -secret %decrypt_key%
   #- cmd: for /f "delims=" %A in (./lines.txt) do echo %A
