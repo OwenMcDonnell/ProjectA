@@ -24,7 +24,9 @@ init:
   - set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - ps: .\testcolor.ps1
+  - ps: >-
+      .\testcolor.ps1
+      write-host $lastexitcode
   - echo %decrypt_key%
   #- ps: iex ((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/appveyor/secure-file/master/install.ps1'))
   #- cmd: appveyor-tools\secure-file -decrypt test.txt.enc -secret %decrypt_key%
