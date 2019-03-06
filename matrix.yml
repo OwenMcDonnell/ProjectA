@@ -1,11 +1,13 @@
 
 version: 1.0.{build}
 image: 
-  #- Visual Studio 2015
-  - Visual Studio 2017
+  - visual studio 2013
+  - previous visual studio 2017
+  - Visual Studio 2015
+  #- Visual Studio 2017
 platform: 
   - x86
-  - x64
+  #- x64
 clone_folder: "c:\\pact"
 environment:
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
