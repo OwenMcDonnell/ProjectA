@@ -9,7 +9,7 @@ platform:
 clone_folder: "c:\\pact"
 environment:
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
-  TMP: "c:\\temp"
+  TMP: test
   my_var1: value1
   my_var2: value2
   decrypt_key:
