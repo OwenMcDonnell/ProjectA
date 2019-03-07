@@ -10,7 +10,7 @@ platform:
   #- x64
 environment:
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
-  TMP: C:\test
+  TEMP: C:\test
   my_var1: value1
   my_var2: value2
   decrypt_key:
@@ -26,6 +26,8 @@ init:
   - set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
+  - set TMP=C:\test
+  - set
   #- ps: .\testcolor.ps1
   #- ps: write-host $erroractionpreference
   #- echo %decrypt_key%
