@@ -26,7 +26,7 @@ init:
   - set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - set TMP=C:\test
+  - set TEMP=C:\test
   - set
   #- ps: .\testcolor.ps1
   #- ps: write-host $erroractionpreference
