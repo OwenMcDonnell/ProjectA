@@ -52,7 +52,7 @@ artifacts:
     name: archive
 deploy:
   - provider: Environment
-    name: test-agent-script
+    name: ProjectA
    # site_name: $(site_to_deploy)
 #matrix:
  #  exclude:
