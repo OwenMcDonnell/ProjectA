@@ -50,9 +50,9 @@ build_script:
 artifacts:
   - path: archive.zip
     name: archive
-#deploy:
- # - provider: Environment
-  #  name: ProjectA
+deploy:
+  - provider: Environment
+    name: test-agent-script
    # site_name: $(site_to_deploy)
 #matrix:
  #  exclude:
