@@ -1,9 +1,9 @@
 
 version: 1.0.{build}
 image: 
-  #- Ubuntu
+  - Ubuntu
   #- Visual Studio 2015
-  - Visual Studio 2017
+  #- Visual Studio 2017
 platform: 
   - x86
   #- x64
@@ -50,9 +50,9 @@ build_script:
 artifacts:
   - path: archive.zip
     name: archive
-deploy:
-  - provider: Environment
-    name: ProjectA
+#deploy:
+ # - provider: Environment
+  #  name: ProjectA
    # site_name: $(site_to_deploy)
 #matrix:
  #  exclude:
