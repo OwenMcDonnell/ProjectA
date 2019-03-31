@@ -27,6 +27,7 @@ init:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
+  - echo $home
   - python --version
   #- set TEMP=C:\test
   #- sh: export APPVEYOR_SSH_BLOCK=true
