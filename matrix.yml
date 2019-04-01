@@ -27,12 +27,12 @@ init:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - echo $home
+  - echo $Home
   - python --version
   #- set TEMP=C:\test
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
-  - set
+  #- set
   #- ps: .\testcolor.ps1
   #- ps: write-host $erroractionpreference
   #- echo %decrypt_key%
