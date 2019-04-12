@@ -28,10 +28,10 @@ init:
 install:
   - echo $HOME
   - nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
-  - cd ~/.local/share/NuGet
+  - cd ~/.config/NuGet
   - ls
-  #- cat NuGet.Config
-  #- cat nuget.config
+  - cat NuGet.Config
+  - cat nuget.config
   - python --version
   #- set TEMP=C:\test
   #- sh: export APPVEYOR_SSH_BLOCK=true
