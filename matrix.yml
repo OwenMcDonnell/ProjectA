@@ -29,7 +29,8 @@ install:
   - echo $HOME
   - cd ~/.config/NuGet
   - ls
-  - cat NuGet.config
+  - cat NuGet.Config
+  - cat nuget.config
   - python --version
   #- set TEMP=C:\test
   #- sh: export APPVEYOR_SSH_BLOCK=true
