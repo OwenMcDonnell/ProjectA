@@ -27,7 +27,7 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   - echo $HOME
-  - cd ~/.local/share
+  - cd ~/.local/share/NuGet
   - ls
   #- cat NuGet.Config
   #- cat nuget.config
