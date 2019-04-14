@@ -27,11 +27,11 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   - echo $HOME
-  - nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
-  - cd ~/.config/NuGet
-  - ls
-  - cat NuGet.Config
-  - cat nuget.config
+  #- nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
+  #- cd ~/.config/NuGet
+  #- ls
+  #- cat NuGet.Config
+  #- cat nuget.config
   - python --version
   #- set TEMP=C:\test
   #- sh: export APPVEYOR_SSH_BLOCK=true
@@ -57,7 +57,7 @@ build_script:
   - 7z a archive.zip %APPVEYOR_BUILD_FOLDER%/archive/*
   - echo "common/default build script"
 artifacts:
-  - path: archive.zip
+  - path: src/ff/archive.zip
     name: archive
 #deploy:
  # - provider: Environment
