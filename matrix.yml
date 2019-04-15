@@ -48,6 +48,7 @@ install:
   - echo $APPVEYOR_BUILD_NUMBER > src/archive/test-file.txt
   - echo $APPVEYOR_BUILD_NUMBER > src/test-file.txt
   - chmod a-xwr src/test-file.txt
+  - ls -l src/test-file.txt
   #- echo echo sleeping; > archive/before-deploy.ps1
   #- echo sleep 60; >> archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
