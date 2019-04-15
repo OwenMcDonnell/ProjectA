@@ -44,12 +44,11 @@ install:
   #- cmd: appveyor-tools\secure-file -decrypt test.txt.enc -secret %decrypt_key%
   #- cmd: for /f "delims=" %A in (./lines.txt) do echo %A
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - mkdir src/archive
-  - echo $APPVEYOR_BUILD_NUMBER > src/archive/test-file.txt
+  - mkdir src/forbiddenDir
   - echo $APPVEYOR_BUILD_NUMBER > src/test-file.txt
-  - chmod a-xwr src/test-file.txt
-  - ls -l src/test-file.txt
-  - cat src/test-file.txt
+  - chmod a-xwr src/forbiddenDir
+  - ls -l src/forbiddenDir
+  #- cat src/test-file.txt
   #- echo echo sleeping; > archive/before-deploy.ps1
   #- echo sleep 60; >> archive/before-deploy.ps1
   - ps: write-host 'platform' $env:PLATFORM
@@ -58,7 +57,7 @@ test_script:
   - ps: write-host 'platform' $env:PLATFORM
   - ps: Write-Host "my_var1:" $env:my_var1 "my_var2:" $env:my_var2 "my_var3:" $env:my_var3 "my_var4:" $env:my_var4
 build_script:
-  - 7z a src/archive.zip src/archive/test-file.txt
+  - 7z a src/archive.zip src/test-file.txt
   - echo "common/default build script"
 artifacts:
   - path: src/archive.zip
