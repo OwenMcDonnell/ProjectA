@@ -47,7 +47,7 @@ install:
   - mkdir src/forbiddenDir
   - echo $APPVEYOR_BUILD_NUMBER > src/test-file.txt
   - chmod a-xwr src/forbiddenDir
-  - ls -l src/forbiddenDir
+  #- ls -l src/forbiddenDir
   #- cat src/test-file.txt
   #- echo echo sleeping; > archive/before-deploy.ps1
   #- echo sleep 60; >> archive/before-deploy.ps1
