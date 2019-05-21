@@ -1,7 +1,7 @@
 version: 1.0.{build}
 image: 
-  - Ubuntu1804
-  #- Visual Studio 2015
+  #- Ubuntu1804
+  - Visual Studio 2015
   #- Visual Studio 2017
 platform: 
   - x86
@@ -22,6 +22,8 @@ environment:
     #- dummy: blank
 
 init: 
+  - echo %APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%
+  - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
