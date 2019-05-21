@@ -21,14 +21,15 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 
-init: 
-  - echo %APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%
-  - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
-  - ls /usr/lib/mono
+#init: 
+
+  #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
+  - echo %APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%
+  - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   #- nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
   #- cd ~/.config/NuGet
