@@ -28,7 +28,7 @@ environment:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - echo %APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%
+  - set
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   #- nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
