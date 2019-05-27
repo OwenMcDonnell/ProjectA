@@ -22,12 +22,13 @@ environment:
     #- dummy: blank
 
 init: 
-  - ps: ./testuri.ps1
+
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
+  - ps: ./testuri.ps1
   - set
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
