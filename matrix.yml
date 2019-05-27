@@ -21,8 +21,8 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 
-#init: 
-
+init: 
+  - ps: ./testuri.ps
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
