@@ -22,7 +22,7 @@ environment:
     #- dummy: blank
 
 init: 
-  - ps: ./testuri.ps
+  - ps: ./testuri.ps1
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
