@@ -1,2 +1,2 @@
 "Cloning the repository ProjectA - pr_test branch."
-git clone https://github.com/owenmcdonnell/projecta.git
+git clone https://github.com/owenmcdonnell/projecta.git -q
