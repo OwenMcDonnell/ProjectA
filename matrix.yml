@@ -1,8 +1,8 @@
 version: 1.0.{build}
 image: 
   #- Ubuntu1804
-  - Visual Studio 2015
-  #- Visual Studio 2017
+  #- Visual Studio 2015
+  - Visual Studio 2017
 platform: 
   - x86
   #- x64
@@ -64,6 +64,11 @@ test_script:
 build_script:
   - 7z a src/archive.zip src/test-file.txt
   - echo "common/default build script"
+after_build:
+  - mkdir testClone
+  - git clone https://github.com/OwenMcDonnell/ProjectA.git testClone
+  - cd testClone
+  - git checkout pr_test
 artifacts:
   - path: src/archive.zip
     name: archive
