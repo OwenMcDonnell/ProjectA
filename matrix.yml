@@ -65,10 +65,7 @@ build_script:
   #- 7z a src/archive.zip src/test-file.txt
   - echo "common/default build script"
 after_build:
-  - mkdir testClone
-  - git clone https://github.com/OwenMcDonnell/ProjectA.git testClone
-  - cd testClone
-  - git checkout pr_test
+  - ./gitClone.ps1
 artifacts:
   - path: src/archive.zip
     name: archive
