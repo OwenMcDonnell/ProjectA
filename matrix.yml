@@ -28,7 +28,7 @@ init:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - ps: ./testuri.ps1
+  #- ps: ./testuri.ps1
   - set
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
@@ -49,9 +49,9 @@ install:
   #- cmd: appveyor-tools\secure-file -decrypt test.txt.enc -secret %decrypt_key%
   #- cmd: for /f "delims=" %A in (./lines.txt) do echo %A
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - mkdir src/forbiddenDir
-  - echo $APPVEYOR_BUILD_NUMBER > src/test-file.txt
-  - chmod a-xwr src/forbiddenDir
+  #- mkdir src/forbiddenDir
+  #- echo $APPVEYOR_BUILD_NUMBER > src/test-file.txt
+  #- chmod a-xwr src/forbiddenDir
   #- ls -l src/forbiddenDir
   #- cat src/test-file.txt
   #- echo echo sleeping; > archive/before-deploy.ps1
