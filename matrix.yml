@@ -1,8 +1,8 @@
 version: 1.0.{build}
 image: 
-  #- Ubuntu1804
+  - Ubuntu1804
   #- Visual Studio 2015
-  - Visual Studio 2017
+  #- Visual Studio 2017
 platform: 
   - x86
   #- x64
@@ -22,7 +22,8 @@ environment:
     #- dummy: blank
 
 init: 
-
+  - sh: export APPVEYOR_SSH_BLOCK=true
+  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
