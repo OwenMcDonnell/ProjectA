@@ -15,6 +15,9 @@ environment:
   my_var2: value2
   decrypt_key:
     secure: P6iITYoWcnW0yreLikw5vA==
+  test_var:
+    secure: AG/L7IsG1DEXtaZSkdo+7Q==
+    
   #artifact-name: archive
   #matrix:
    # - my_var3: value3
@@ -33,6 +36,7 @@ install:
   - set
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
+  - echo $test_var
   #- nuget install Microsoft.VisualStudio.Azure.Fabric.MSBuild -OutputDirectory ./packages
   #- cd ~/.config/NuGet
   #- ls
