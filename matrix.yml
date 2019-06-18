@@ -24,7 +24,7 @@ environment:
     #- my_var4: value4
     #- dummy: blank
 
-init: 
+#init: 
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   #- ls /usr/lib/mono
@@ -33,7 +33,7 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: ./testuri.ps1
-  - set
+#  - set
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   - echo $test_var
@@ -69,8 +69,8 @@ test_script:
 build_script:
   #- 7z a src/archive.zip src/test-file.txt
   - echo "common/default build script"
-after_build:
-  - ps: ./gitClone.ps1
+#after_build:
+ # - ps: ./gitClone.ps1
 artifacts:
   - path: src/archive.zip
     name: archive
