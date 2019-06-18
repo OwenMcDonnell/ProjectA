@@ -25,8 +25,8 @@ environment:
     #- dummy: blank
 
 init: 
-  - sh: export APPVEYOR_SSH_BLOCK=true
-  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
+  #- sh: export APPVEYOR_SSH_BLOCK=true
+  #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
