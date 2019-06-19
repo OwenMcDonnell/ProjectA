@@ -35,7 +35,7 @@ environment:
 install:
   #- ps: ./testuri.ps1
 #  - set
-  - csc /version
+  - dir \csc.exe /s
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   - echo $test_var
