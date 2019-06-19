@@ -1,8 +1,9 @@
 version: 1.0.{build}
 image: 
-  - Ubuntu1804
+  #- Ubuntu1804
   #- Visual Studio 2015
   #- Visual Studio 2017
+  - Visual Studio 2019
 platform: 
   - x86
   #- x64
@@ -34,6 +35,7 @@ environment:
 install:
   #- ps: ./testuri.ps1
 #  - set
+  - csc /version
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   - echo $test_var
