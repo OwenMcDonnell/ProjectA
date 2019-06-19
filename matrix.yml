@@ -35,7 +35,10 @@ environment:
 install:
   #- ps: ./testuri.ps1
 #  - set
-  - dir \csc.exe /s
+  #- dir \csc.exe /s
+  - "C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\15.0\Bin\Roslyn\csc.exe" /?
+  - "C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\MSBuild\15.0\Bin\Roslyn\csc.exe" /version
+  
   - IF "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"=="" ECHO Variable is NOT defined
   - echo $HOME
   - echo $test_var
