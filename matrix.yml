@@ -3,7 +3,7 @@ image:
   #- Ubuntu1804
   #- Visual Studio 2015
   #- Visual Studio 2017
-  - Visual Studio 2019
+  - Visual Studio 2019 preview
 platform: 
   - x86
   #- x64
