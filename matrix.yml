@@ -1,9 +1,9 @@
 version: 1.0.{build}
 image: 
-  #- Ubuntu1804
+  - Ubuntu
   #- Visual Studio 2015
   #- Visual Studio 2017
-  - Visual Studio 2019 preview
+  #- Visual Studio 2019 preview
 platform: 
   - x86
   #- x64
@@ -33,6 +33,7 @@ environment:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
+  - dotnet --info
   #- ps: ./testuri.ps1
 #  - set
   #- dir \csc.exe /s
