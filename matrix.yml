@@ -34,7 +34,7 @@ environment:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   - curl https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
-  - sudo bash ./dotnet-install.sh --version 2.2.102
+  - sudo bash dotnet-install.sh --version 2.2.102
   #- ps: ./testuri.ps1
 #  - set
   #- dir \csc.exe /s
