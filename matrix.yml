@@ -24,7 +24,9 @@ environment:
    # - my_var3: value3
     #- my_var4: value4
     #- dummy: blank
-
+branches:
+  only:
+    - master
 #init: 
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
