@@ -26,7 +26,7 @@ environment:
     #- dummy: blank
 branches:
   only:
-    - test
+    - master
 #init: 
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
