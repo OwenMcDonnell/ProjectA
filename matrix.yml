@@ -9,7 +9,8 @@ platform:
   #- x64
 #stack: Python 3.5.6
 environment:
-  APPVEYOR_SSH_KEY: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAgaMFQfK0tdheN+pJYtWx0gzAHmSvsX95tXfEZZAi8KkgmFX4quLJRQLg/mdS6BlEliM4spDKQSRcn51DjCP/SbXgDJBRwzadabb8EigC2tGf8b/zHKlS6ebZ/l5w0VeH07L/SOPLNjVEYydQDyl87XJdd0VlNq6nW842cmmVoExbS1yKtI/DGveahJR/6mZotzSyiA3QMfy5mU04RV2QuTFKDoMHLLgWV2lH7SCgfONx689mX4R8oPG3DUvZulznHP519yV0AYzA+G56TsgFK8zI/k7AWVF1OHwWTtVEVTR1PC5O6bHQauDlDCjddhMx+WuDadYLNPwGTIzAmBc9QQ==
+  APPVEYOR_SSH_KEY: 
+    secure: /X8+umHrtl4HwHbtVmN+Cr9pJLryYyuu+lSrELTP2m70UuHR3cmdBaBGIEoVeQLMuolGRLkJ8vXnxvnqnPUUHpiA08hficDvnnXmyIZA5J7Df3eRO3TDPSh2IEUUeFoNbP1phV4chRALOJ6+9Sn9SXfkesc3swZtRaw22GPvDEBi5RF08hQevyWqtIMVeo64wira0daSt2OklbSVl5MVWgq4Iom1grPvswdmAKJmER1rlCXg6jM7i+piVlfMGPHhCTiCCYCTTg3qSHC2jeDjwA3dh+I3JOzZBzI2AbCPLx/fcVf5/hXs3cv4fDJjo+j6revKhpQzsisLEbqYVZNZ7cMuj6kRlxLX8KdAoLfVR15XXK208RXHcHViIsoJjErtTTvNly2r6gmcHXpOlQQlbSLpjRlQ54iHCoBcUE1gBjWHBiQcrkWzG24RJ/rR273TrtY/3X3/J3WxFGpZsTdhve3G1h4lxASX62SsHjir6XCdC+nQHpCl62t4099oDlsVCD4AuhvQgRGO9kkiSiEAlqHZpe7CJLBqG2rWWJI50C4=
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
   #TMP: C:\test
   my_var1: value1
@@ -28,8 +29,8 @@ branches:
   only:
     - test
 #init: 
-  #- sh: export APPVEYOR_SSH_BLOCK=true
-  #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
+  - sh: export APPVEYOR_SSH_BLOCK=true
+  - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
   #- ls /usr/lib/mono
   #- ps: get-netnat | remove-netnat
   #- set
