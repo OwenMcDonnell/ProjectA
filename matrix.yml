@@ -32,7 +32,7 @@ environment:
 init:
   - choco install opencover
   - Set PATH=C:\Users\Appveyor\AppData\Local\Apps\OpenCover\;%PATH%
-  
+  - OpenCover.console.exe -version
   - cmd: C:\Windows\System32\WHERE OpenCover.*
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
