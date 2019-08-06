@@ -31,7 +31,7 @@ environment:
   #  - test
 init:
   - choco install opencover
-  - Get-Content C:\ProgramData\chocolatey\logs\chocolatey.log
+  - ps: Get-Content C:\ProgramData\chocolatey\logs\chocolatey.log
   - cmd: C:\Windows\System32\WHERE OpenCover.*
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
