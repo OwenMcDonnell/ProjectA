@@ -2,7 +2,7 @@ version: 1.0.{build}
 image: 
   #- Ubuntu1804
   #- Visual Studio 2015
-  - Previous Visual Studio 2017
+  - Visual Studio 2017
   #- Visual Studio 2019 preview
 platform: 
   - x86
@@ -30,6 +30,7 @@ environment:
  # only:
   #  - test
 init:
+  - choco install opencover
   - cmd: C:\Windows\System32\WHERE OpenCover.*
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
