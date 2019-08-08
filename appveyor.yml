@@ -7,8 +7,8 @@ environment:
     secure: f7KhsLtvVpjkt+Qdcti/HlBSidEbnuu9+cl+FxtSOPg=
   test_value:
     secure: 22BkPykr5pS67rWgw7eFqw==
-#init:
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+init:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
 #- ps: $env:Path = ""
   #- ps: |
