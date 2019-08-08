@@ -1,8 +1,8 @@
 version: 1.0.{build}
 image: 
   #- Ubuntu1804
-  - Visual Studio 2015
-  #- Visual Studio 2017
+  #- Visual Studio 2015
+  - Visual Studio 2017
   #- Visual Studio 2019 preview
 platform: 
   - x86
@@ -39,6 +39,7 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   - pwsh.exe write-host "test"
+  - vcpkg version
   - cd src
   - cd ..
   - curl https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
