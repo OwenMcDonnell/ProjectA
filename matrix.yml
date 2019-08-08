@@ -39,7 +39,7 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- pwsh.exe write-host "test"
-  - vcpkg version
+  - cd c:/tools/vcpkg && vcpkg version
   - cd src
   - cd ..
   - curl https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
