@@ -33,6 +33,12 @@ init:
   - ps: >-
       Push-location
 
+      Set-Location HKLM:
+      
+      New-Item -Path .\SYSTEM\CurrentControlSet\Control\FileSystem\ -Name LongPathsEnabled
+      
+      Set-ItemProperty -Path .\SYSTEM\CurrentControlSet\Control\FileSystem\ -Name LongPathsEnabled -Value 1
+      
       Test-Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled
 
       Pop-Location
