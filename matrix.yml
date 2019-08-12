@@ -31,11 +31,11 @@ environment:
   #  - test
 init:
   - ps: >-
-    Push-location
+      Push-location
 
-    Test-Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled
+      Test-Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled
 
-    Pop-Location
+      Pop-Location
 
   #- sh: export APPVEYOR_SSH_BLOCK=true
   #- sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
