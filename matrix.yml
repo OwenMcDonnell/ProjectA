@@ -38,7 +38,7 @@ init:
   #- set
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
-  - set path=%path%;%path%;%path%;%path%;%path%;%path%;%path%;%path%;%path%;%path%;%path%
+  - set path=%path%;%path%;%path%;%path%
   - echo %path%
   - python -V
   #- pwsh.exe write-host "test"
