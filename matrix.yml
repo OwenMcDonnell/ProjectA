@@ -10,7 +10,7 @@ platform:
 #stack: Python 3.5.6
 
 environment:
-  JAVA_HOME: C:\Program Files\Java\jdk12
+  JAVA_HOME: C:\Program Files\Java\jdk11
   APPVEYOR_SSH_KEY: 
     secure: /X8+umHrtl4HwHbtVmN+Cr9pJLryYyuu+lSrELTP2m70UuHR3cmdBaBGIEoVeQLMuolGRLkJ8vXnxvnqnPUUHpiA08hficDvnnXmyIZA5J7Df3eRO3TDPSh2IEUUeFoNbP1phV4chRALOJ6+9Sn9SXfkesc3swZtRaw22GPvDEBi5RF08hQevyWqtIMVeo64wira0daSt2OklbSVl5MVWgq4Iom1grPvswdmAKJmER1rlCXg6jM7i+piVlfMGPHhCTiCCYCTTg3qSHC2jeDjwA3dh+I3JOzZBzI2AbCPLx/fcVf5/hXs3cv4fDJjo+j6revKhpQzsisLEbqYVZNZ7cMuj6kRlxLX8KdAoLfVR15XXK208RXHcHViIsoJjErtTTvNly2r6gmcHXpOlQQlbSLpjRlQ54iHCoBcUE1gBjWHBiQcrkWzG24RJ/rR273TrtY/3X3/J3WxFGpZsTdhve3G1h4lxASX62SsHjir6XCdC+nQHpCl62t4099oDlsVCD4AuhvQgRGO9kkiSiEAlqHZpe7CJLBqG2rWWJI50C4=
   #APPVEYOR_BUILD_WORKER_IMAGE: visual studio 2015
@@ -47,7 +47,7 @@ install:
   
   #- ps: $env:Path += ";$($env:JAVA_HOME)\bin"    
   - cmd: SET "PATH=%JAVA_HOME%\bin;%PATH%" 
-  - ps: write-host $env:path
+  #- ps: write-host $env:path
   - ps: java -version
 
   - python -V
