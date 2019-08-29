@@ -44,7 +44,7 @@ init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 install:
   #- ps: New-ItemProperty -Path HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem -Name LongPathsEnabled -PropertyType Dword
-  - du -sha $HOME
+  - du -ha $HOME
   #- ps: $env:Path += ";$($env:JAVA_HOME)\bin"    
   - cmd: SET "PATH=%JAVA_HOME%\bin;%PATH%" 
   #- ps: write-host $env:path
